@@ -1,0 +1,45 @@
+import java.util.Arrays;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+class BubbleSort {
+
+    public static int [] Bubble (int numbers []){
+
+        final int n = numbers.length;
+        int aux;
+
+        for (int i = 0 ; i < n-1 ; i++){
+            for (int j = 0 ; j < n-1-i ; j++){
+                if (numbers[j] > numbers[j+1]){
+                    aux = numbers[j];
+                    numbers[j] = numbers[j+1];
+                    numbers[j+1] = aux;
+                }
+            }
+        }
+        return numbers;
+    }
+
+    public static void main (String args [ ]){
+        int i, VectX [];
+        VectX = new int [5];
+
+        for (i = 0; i < 5; i++){
+            VectX[i] = Integer.parseInt(JOptionPane.showInputDialog("Digite um valor inteiro"));
+        }
+        VectX = Bubble(VectX);
+        
+        JFrame parent = new JFrame();
+
+        JOptionPane.showMessageDialog(parent, "Bubble Sort: " + Arrays.toString(VectX));
+        
+
+           
+        System.exit(0);
+        
+
+    }
+    
+}
